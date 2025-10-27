@@ -1,13 +1,20 @@
-
 # syntax=docker/dockerfile:1
-FROM golang:1.22 AS build
-WORKDIR /app
-COPY go.mod ./
-RUN go mod download
-COPY . .
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o feedbacksvc ./cmd/server
 
-FROM gcr.io/distroless/base-debian12
+# Use a Go >= 1.24 toolchain (1.25 is fine)
+FROM golang:1.25 AS build
+WORKDIR /app
+
+# Copy mod files first for better caching
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest and build
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
+    go build -trimpath -ldflags "-s -w" -o feedbacksvc ./cmd/server
+
+# Small, non-root runtime image
+FROM gcr.io/distroless/static:nonroot
 WORKDIR /
 COPY --from=build /app/feedbacksvc /feedbacksvc
 ENV PORT=8080

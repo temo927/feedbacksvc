@@ -1,0 +1,12 @@
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+
+# Install Temurin Java 21 + netcat for healthcheck
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends wget gnupg apt-transport-https ca-certificates \
+ && wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add - \
+ && echo "deb https://packages.adoptium.net/artifactory/deb bookworm main" > /etc/apt/sources.list.d/adoptium.list \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends temurin-21-jre netcat-traditional \
+ && rm -rf /var/lib/apt/lists/*
+
+CMD ["bash", "-lc", "gcloud beta emulators firestore start --host-port=0.0.0.0:8080 --quiet"]
