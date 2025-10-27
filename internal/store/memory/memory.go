@@ -5,8 +5,8 @@ import (
     "context"
     "sync"
 
-    "github.com/yourname/feedbacksvc/internal/domain"
-    "github.com/yourname/feedbacksvc/internal/store"
+    "github.com/temo927/feedbacksvc/internal/domain"
+    "github.com/temo927/feedbacksvc/internal/store"
 )
 
 type memStore struct {

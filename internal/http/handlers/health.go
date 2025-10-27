@@ -4,7 +4,7 @@ package handlers
 import (
     "net/http"
 
-    "github.com/yourname/feedbacksvc/pkg/response"
+    "github.com/temo927/feedbacksvc/pkg/response"
 )
 
 func (h *Handlers) Health(w http.ResponseWriter, r *http.Request) {

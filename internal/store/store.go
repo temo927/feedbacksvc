@@ -4,7 +4,7 @@ package store
 import (
     "context"
 
-    "github.com/yourname/feedbacksvc/internal/domain"
+    "github.com/temo927/feedbacksvc/internal/domain"
 )
 
 type Store interface {

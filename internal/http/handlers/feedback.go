@@ -11,11 +11,11 @@ import (
     "strings"
     "time"
 
-    "github.com/yourname/feedbacksvc/internal/config"
-    "github.com/yourname/feedbacksvc/internal/domain"
-    "github.com/yourname/feedbacksvc/internal/pubsub"
-    "github.com/yourname/feedbacksvc/internal/store"
-    "github.com/yourname/feedbacksvc/pkg/response"
+    "github.com/temo927/feedbacksvc/internal/config"
+    "github.com/temo927/feedbacksvc/internal/domain"
+    "github.com/temo927/feedbacksvc/internal/pubsub"
+    "github.com/temo927/feedbacksvc/internal/store"
+    "github.com/temo927/feedbacksvc/pkg/response"
 )
 
 type Handlers struct {

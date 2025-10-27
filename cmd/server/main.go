@@ -7,10 +7,10 @@ import (
     "os"
     "time"
 
-    "github.com/yourname/feedbacksvc/internal/config"
-    "github.com/yourname/feedbacksvc/internal/httpserver"
-    "github.com/yourname/feedbacksvc/internal/pubsub/stdout"
-    "github.com/yourname/feedbacksvc/internal/store/memory"
+    "github.com/temo927/feedbacksvc/internal/config"
+    "github.com/temo927/feedbacksvc/internal/http"
+    "github.com/temo927/feedbacksvc/internal/pubsub/stdout"
+    "github.com/temo927/feedbacksvc/internal/store/memory"
 )
 
 func main() {

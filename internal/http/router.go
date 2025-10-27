@@ -5,10 +5,10 @@ import (
     "github.com/go-chi/chi/v5"
     "github.com/go-chi/chi/v5/middleware"
 
-    "github.com/yourname/feedbacksvc/internal/config"
-    "github.com/yourname/feedbacksvc/internal/http/handlers"
-    "github.com/yourname/feedbacksvc/internal/pubsub"
-    "github.com/yourname/feedbacksvc/internal/store"
+    "github.com/temo927/feedbacksvc/internal/config"
+    "github.com/temo927/feedbacksvc/internal/http/handlers"
+    "github.com/temo927/feedbacksvc/internal/pubsub"
+    "github.com/temo927/feedbacksvc/internal/store"
 )
 
 func NewRouter(st store.Store, pub pubsub.Publisher, cfg config.Config) *chi.Mux {

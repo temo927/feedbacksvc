@@ -7,7 +7,7 @@ import (
     "fmt"
     "time"
 
-    "github.com/yourname/feedbacksvc/internal/pubsub"
+    "github.com/temo927/feedbacksvc/internal/pubsub"
 )
 
 type publisher struct{}
