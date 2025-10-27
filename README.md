@@ -44,7 +44,6 @@
   internal/pubsub/          # publisher interfaces
     stdout/                 # stdout publisher impl
   pkg/response/             # response helpers
-  tests/                    # package tests
   ```
 
   ## Notes
@@ -61,11 +60,6 @@
   ```bash
   docker build -t feedbacksvc:dev .
   docker run --env-file .env -p 8080:8080 feedbacksvc:dev
-  ```
-
-  ## Tests (bonus)
-  ```bash
-  go test ./...
   ```
 
   ## Environment
