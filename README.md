@@ -19,6 +19,9 @@ and simulates Pub/Sub publishing via **stdout logs**.
 
 ### 1️⃣ Build and start services
 ```bash
+cp .env.example .env
+```
+```bash
 docker compose up --build
 ```
 
